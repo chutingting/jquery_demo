@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>滑过文字旋转</title>
+    <style>
+        *{margin:0;padding:0}
+        .box{width:400px;margin:50px auto}
+        a{
+            display: inline-block;
+            width:100px;height:100px;
+            background:#5cb1f0;
+            margin-left:20px;
+            border-radius: 50px;
+            text-align: center;
+            line-height: 100px;
+            color:#fff;text-decoration: none;
+            font-size:50px;
+            font-weight: bolder;
+            transition: transform 1s;
+            text-shadow: 5px 5px 6px #a09797;
+        }
+        .box p:nth-child(2)>a{
+            background: orange;
+        }
+        .box p:nth-child(3)>a{
+            background: #19e26e;
+        }
+        .box a:hover{
+            transform: rotate(720deg);
+        }
+        .box a:hover+span{
+           color:red;
+        }
+        p span{
+            display: block; width:100px;
+            text-align: center;padding:15px;
+            font-weight: bold;
+        }
+        p{float: left;}
+    </style>
+</head>
+<body>
+    <div class="box">
+      <p>  <a href="#">抽</a><span>幸运抽奖</span></p>
+       <p>  <a href="#">享</a><span>特权商品</span></p>
+       <p> <a href="#">兑</a><span>积分兑换</span></p>
+    </div>
+</body>
+</html>

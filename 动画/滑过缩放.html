@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>滑过缩放</title>
+    <style>
+        *{margin:0;padding:0}
+        .box{width:100px;margin:0 auto;background: #D1DBDD;padding:50px;}
+        .box img{
+            display: block;
+            margin-top:50px;
+            transition: transform 1s;
+            
+            
+        }
+        .box img:hover{
+            transform: scale(1.5);
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="img/01.png" >
+        <img src="img/02.png" >
+        <img src="img/03.png" >
+    </div>
+</body>
+</html>

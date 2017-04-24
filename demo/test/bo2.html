@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body><!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>你好</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            width: 300px;
+            height: 200px;border:1px solid red;
+            margin:0 auto;
+        }
+        ul li{
+            width: 100px;
+            height: 20px;
+            float: left;
+            text-align: center;
+            background: #ccc;
+        }
+        ol{
+            width: 300px;
+            height: 160px;
+        }
+        ol li{
+            width: 300px;
+            height: 160px;
+            display: none;
+        }
+        ol li:first-child{
+            display: block;
+        }
+        li{
+            list-style:none;
+        }
+        .high{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <ol>
+        <li>11111111</li>
+        <li>22222222</li>
+        <li>33333333</li>
+    </ol>
+    <script src="jquery-3.0.0.min.js"></script>
+    <script>
+       var sum=0;
+
+        setInterval(function(){
+            $('ul li').addClass('high').siblings().removeClass('high');
+            var index=$(this).index();
+            $('ol li').eq(index).show().siblings().hide();
+        },1000)
+    </script>
+</div>
+</body>
+</html>
+
+</body>
+</html>

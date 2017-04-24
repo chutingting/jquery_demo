@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>移动端开关按钮</title>
+    <style>
+        *{margin:0;padding:0;box-sizing: border-box}
+        /*我同意*/
+        .agree{
+            width:150px;height:60px;
+            background:orange;
+            border-radius: 30px;
+            margin:50px auto;
+            position: relative;
+            box-shadow: 0 0 10px #999;
+        }
+       .agree label input{margin-left:-9999px;}
+        .agree label a{
+            padding-left:30px;
+            line-height: 60px;
+            text-decoration: none;
+            color:#fff;font-weight: bold;
+            font-size: 24px;
+            z-index: 99999;
+            
+            
+        }
+        .agree label span{
+            position: absolute;right:10px;top:10px;
+            width:30px;height:30px;
+            background:#999;
+            border-radius: 20px;
+            opacity: 0.6;
+        }
+        .agree label  i{
+            position: absolute;right:15px;top:15px;
+            width:20px;height:20px;
+            background:#ccc;
+            border-radius: 20px;
+            display: none;
+        }
+        .agree label input[type=checkbox]:checked~i{
+            display: block;
+        }
+        /*.agree label input[type=checkbox]:checked {
+            background:blue;
+        }*/
+        
+        .agree label b{
+            width:100%;height:100%;
+            position: absolute;left:0;top:0;
+             border-radius: 30px;        
+        }
+        
+        /*开启和关闭*/
+        .btn{
+            width:100px;height:40px;
+            background:#708ae2;
+            margin:0 auto;
+            border-radius: 30px;
+            position: relative;
+        }
+        .btn input[type=checkbox]:before{
+            content:"";
+            display: inline-block;
+            width:35px;height:35px;
+            border-radius: 50px;
+            background:#eee;
+            transition: transform 1s;
+            position: absolute;left:0;top:2px;
+            z-index: 999;
+        }
+       
+        .btn span{
+            width:100%;height:100%;
+            border-radius: 30px;
+            position: absolute;left:0;top:0;
+            text-align: center;
+            line-height: 40px;
+        }
+        .btn input[type=checkbox]:checked:before{
+            transform: translate(65px);
+        }
+        .btn input[type=checkbox]:checked+span{
+            background: pink; 
+        }
+         .btn input[type=checkbox]+span:after{
+            content: "开启";
+        }
+        .btn input[type=checkbox]:checked+span:after{
+            content: "关闭";
+        }
+       
+        .btn  input[type=checkbox]{
+            margin-left:-999px;
+        }
+        
+        /*勾选*/
+        .ckebox{
+            width:200px;
+            margin:50px auto;
+            position:relative;
+           
+        }
+        .ckebox label{
+            /*position: absolute;left:10px;top:10px;*/
+            display: block;
+            float: left;
+            margin-left:30px;
+            width:30px;height:30px;
+            border:1px solid #666;
+            border-radius: 5px;
+            background:#ccc;
+            z-index: 111;
+        }
+        .ckebox input[type=checkbox]{
+        display: none}
+        .ckebox span{
+            content:"";
+            display: block;
+            width:40px;height:20px;
+            border:2px solid #666;
+            border-top:none;
+            border-right:none;
+            transform: rotate(-50deg);/*
+            position: absolute;left:10px;top:20px;*/
+            display: none;       
+        }
+        .ckebox input[type=checkbox]:checked~span{
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--我同意-->
+    <div class="agree">
+        <label >
+             <a href="#">我同意</a> 
+            <input type="checkbox" >           
+             <b></b>
+            <span></span><i></i>
+    
+        </label>    
+    </div>
+    <!--开启和关闭-->
+    <div class="btn">
+        <label >
+            <input type="checkbox">
+            <span></span>
+        </label>
+    </div>
+    <!--勾选-->
+    <div class="ckebox">
+        <label>
+            <input type="checkbox">
+            <span></span>
+        </label>
+        <label>
+            <input type="checkbox">
+            <span></span>
+        </label>
+    </div>
+</body>
+</html>

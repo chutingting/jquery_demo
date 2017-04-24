@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>移动端开关</title>
+    <style>
+        *{margin:0;padding:0;box-sizing: border-box;}
+        /*定义灰色背景*/
+        .off{
+            margin:50px auto;
+            width:100px;height:40px;
+            background:#eee;
+            border-radius: 20px;
+            position: relative;
+            border:1px solid #ccc;
+        }
+        /*在input前加一个圆*/
+        .off input[type=checkbox]:before{
+            content:"";
+            display:inline-block;
+            width:35px;height:35px;
+            background: #eee;
+            border:1px solid #ccc;
+            border-radius: 40px;
+            position: absolute;
+            left:0;top:0.5px;
+            z-index: 9999;
+            transition: all 0.5s; /*以0.5秒的速度位移*/
+            
+        }
+     /*点击按钮后背景变为绿色*/
+        .off input[type=checkbox]:checked+span{
+            width:100%;height:100%;
+            display: inline-block;
+            background: #0ff232;
+            border-radius: 50px;
+            position: absolute;
+            left:0;top:0;
+            transition: background 2s;  /*让背景以2秒的速度出现*/
+            
+        }
+        /*圆移动到右边*/
+        .off input[type=checkbox]:checked:before{
+            transform: translate(62px);
+        }
+        /*让复选框隐藏*/
+        .off input[type=checkbox]{
+            margin-left: -999px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="off">
+        <label >
+            <input type="checkbox" class="box">
+            <span></span>
+        </label>
+    </div>
+</body>
+</html>

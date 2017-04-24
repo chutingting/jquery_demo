@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>动画</title>
+    <style>
+        body{
+            width:500px;
+            margin:50px auto;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background: blue;
+            transition: transform 2s; /*实现过度效果的属性*/
+        }
+        
+        .go:checked+.box {
+             /*transform: translate(300px); 位移（x,y）*/
+            /*transform: rotate(360deg);旋转360度*/
+            /*transform: scale(2); 放大2倍*/
+           /* transform:skewX(30deg);倾斜*/
+            /*transform: rotate(720deg);
+            transform-origin: left top; 改变旋转轴心*/
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" class="go">
+    <div class="box"></div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>限制汉字个数</title>
+</head>
+<body>
+<input type="text" id="txt">
+<script src="jquery-3.0.0.min.js"></script>
+<script>
+
+   $("#txt").keyup(function(){
+       var txt = $("#txt").val();
+       if(txt.length > 10){
+           alert("汉字不能超过十个");
+           txt = txt.substring(0,10);
+           $(this).val(txt);
+       }
+   })
+</script>
+</body>
+</html>

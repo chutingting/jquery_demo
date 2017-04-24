@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>关键帧动画</title>
+    <link rel="stylesheet" href="css/animate.css">
+    <style>
+        *{margin:0;padding:0;}
+        .box{
+            width:175px;
+            height:100px;
+            background:url(./img/mm.jpg) no-repeat;
+            background-size:contain;
+            margin: 100px auto;
+            border:1px solid #000;
+        }
+        /*定义动画  动画规则*/
+        @-webkit-keyframes mm{
+            0%{}
+            30%{
+                transform: rotate(720deg);
+            }
+            50%{
+               transform: scale(1.5);
+            }
+            80%{
+                transform:translate(200px);
+            }
+            100%{
+                transform:skewX(30deg);
+            }
+        }
+        /*使用规则*/
+        .box{
+            -webkit-animation:mm 10s infinite;  /*infinite  循环播放*/
+        }
+        
+        .box2{
+            width:50px;height:50px;
+            background:blue;
+            position: absolute;
+            bottom:-50px;left:50%;
+            margin-left:-25px;
+            opacity: 0;
+            
+        }
+        @-webkit-keyframes box2{
+           
+            100%{
+                transform: translateY(-200px);
+                opacity:1;
+            }
+        }
+        .box2{
+            -webkit-animation:box2 5s ;
+            /*animation-direction: alternate;  交替播放*/
+            animation-fill-mode: forwards;
+            /*animation-iteration-count: 3;*/ /*播放次数*/
+        }
+        
+        .box3{
+            width:80px;height:50px;
+            border:1px solid blue;
+            position: absolute;left:50px;bottom:50px;
+            background: url(./img/mm2.jpg) no-repeat;
+            background-size:contain;
+        }
+    </style>
+</head>
+<body>
+   <div class="box"></div>
+   
+   
+   <div class="box2"></div>
+   <div class="box3 animated bounce"></div>
+</body>
+</html>

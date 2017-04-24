@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>弹出层</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        html,body{
+            width:100%;height: 100%;
+        }
+        .login{
+            position: fixed;
+        }
+        .overlay{
+            width: 100%;height: 100%;
+            position: absolute;left:0;top:0;
+            background: #000;
+            opacity: 0.2;
+            filter: alpha(opacity=40);/*兼容IE9一下 支持透明*/
+        }
+        .box{
+            padding:10px;
+            background: blue;
+            position: fixed;
+            border-radius: 10px;
+            cursor: move;
+        }
+        .content{
+            padding:20px;
+            border-radius: 10px;
+            background: #fff;
+        }
+        .close{
+            position: absolute;right: 0;top:0;
+            background: #ccc;width:20px;height: 20px;
+            border-radius: 20px;text-align: center;
+        }
+    </style>
+</head>
+<body>
+<a href="#" class="login">登录</a>
+<!--<div class="overlay"></div>
+ <div class="box">
+     <div class="content">内容区域</div>
+     <a href="#" class="close">X</a>
+ </div>-->
+<script src="js/jquery.js"></script>
+<script src="js/drag.js"></script>
+<script>
+    //弹出层实现效果
+    var model=(function(){
+        //初始化变量
+        var method={},$overlay,$box,$content,$close;
+        //动态创建HTML
+        $overlay=$('<div class="overlay"></div>');  //蒙层
+        $box=$('<div class="box" id="box"></div>');          //弹出的大盒子
+        $content=$('<div class="content"></div>');  //内容区域
+        $close=$('<div class="close">X</div>');      //关闭按钮
+
+        $box.append($content,$close);   //弹出的盒子里添加内容区域和关闭按钮
+
+        $(function(){
+            $("body").append($overlay,$box);   //给body添加蒙层和弹出的大盒子
+        })
+
+        $overlay.hide();   //让弹出的内容先隐藏
+        $box.hide();
+
+        //点击关闭
+        $close.on("click",function(e){
+            method.close();
+            e.preventDefault();
+        })
+        //定义居中的方法
+        method.center=function(){
+            var left,top;
+            //窗口的宽度减去弹出盒子的总宽度除以2
+            left=($(window).width()-$box.outerWidth())/2;
+            top=($(window).height()-$box.outerHeight())/2;
+
+            $box.css({
+                //加上滚动的距离
+                left:left+$(window).scrollLeft(),
+                top:top+$(window).scrollTop()
+            })
+
+        }
+        //定义open方法
+        method.open=function(settings){
+            /*先让内容为空*/
+            $content.empty().append(settings.content);  //是下面调用的content
+            /*改变宽高*/
+            $content.css({
+                width:settings.width || "auto",
+                height:settings.height || "auto"
+
+            })
+            $overlay.show();
+            $box.show();
+            method.center();  //调用让盒子居中的方法
+            $(window).on("resize",method.center);  //让弹出的盒子随着窗口变化而变化
+            /*$("#box").click(function(){
+             // m=true;
+             alert(111)
+             })*/
+            //  drag();  //调用拖拽
+
+
+        }
+
+        //定义关闭方法
+        method.close=function(){
+            $overlay.hide();
+            $box.hide();
+            $(window).off("resize",method.center); //释放内存 防止内存泄漏
+        }
+
+        return method;
+
+    }());
+
+
+    /*调用*/
+    $(function(){
+        $(".login").on("click",function(e){
+            model.open({content:"测试弹出层",width:200,height:200});
+            drag($("#box"));//调用拖拽
+            /*可以用ajax渲染数据  get  可以嵌入文件*/
+            /*$.get("data.html",function(data){
+             model.open({content:data,width:200,height:200});
+             drag($("#box"))
+             })*/
+            e.preventDefault();  //阻止点击a的默认行为
+
+        })
+    })
+</script>
+</body>
+<html>
