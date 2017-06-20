@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div style="margin: 0 auto;width: 200px;" class="box">
+
+    <div style="position: relative;width: 200px;">
+        <input type="text" class="inputSel">
+        <div id="triangle-down"></div>
+    </div>
+
+    <div class="search" id="search">
+        <table style="width:200px;" id="table">
+
+        </table>
+        <div style="padding:10px;text-align: right;">
+            <button class="saveBtn">确定</button>
+        </div>
+    </div>
+
+</div>
+<script src="../../jquery.min.js"></script>
+<script src="sel.js"></script>
+<script>
+    $(function(){
+        $('.box').searchSelect();
+    })
+</script>
+</body>
+</html>

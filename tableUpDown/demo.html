@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap.css">
+</head>
+<body>
+<table class="table table-bordered">
+    <tr>
+        <td>HTML5获取地理位置定位信息_01010101</td>
+        <td>2015-04-25_01010101</td>
+        <td><a href="#" class="up">上移</a> <a href="#" class="down">下移</a> <a href="#" class="top">置顶</a></td>
+    </tr>
+    <tr>
+        <td>HTML5获取地理位置定位信息_02020202</td>
+        <td>2015-04-25_02020202</td>
+        <td><a href="#" class="up">上移</a> <a href="#" class="down">下移</a> <a href="#" class="top">置顶</a></td>
+    </tr>
+    <tr>
+        <td>HTML5获取地理位置定位信息_03030303</td>
+        <td>2015-04-25_03030303</td>
+        <td><a href="#" class="up">上移</a> <a href="#" class="down">下移</a> <a href="#" class="top">置顶</a></td>
+    </tr>
+
+</table>
+
+<script src="../jquery.min.js"></script>
+<script>
+    $(function(){
+        //上移
+        var up = $(".up");
+        up.click(function() {
+            var tr = $(this).parents("tr");
+            if (tr.index() != 0) {
+                tr.fadeOut().fadeIn();
+                tr.prev().before(tr);
+
+            }
+        });
+        //下移
+        var down = $(".down");
+        var len = down.length;
+        down.click(function() {
+            var tr = $(this).parents("tr");
+            if (tr.index() != len - 1) {
+                tr.fadeOut().fadeIn();
+                tr.next().after(tr);
+            }
+        });
+        //置顶
+        var top = $(".top");
+        top.click(function(){
+            var tr = $(this).parents("tr");
+            tr.fadeOut().fadeIn();
+            $(".table").prepend(tr);
+            tr.css("color","#f60");
+        });
+    });
+</script>
+</body>
+</html>

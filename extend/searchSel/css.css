@@ -1,0 +1,47 @@
+.inputSel{width:200px;height: 26px;border:1px solid #ddd;text-indent: 10px;}
+#triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 9px solid #999;
+    position: absolute;
+    right: 0;top:10px;
+}
+
+.rotateUp {
+    transform:rotate(180deg);
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+.rotateDown {
+    transform:rotate(0deg);
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+.search{
+    border: 1px solid #ccc;
+    border-top: 0px;width:202px;
+    box-shadow: 1px 1px 3px #ededed;
+}
+table{
+    border-collapse: collapse;
+
+}
+table tr:hover{background: #eee;}
+
+.saveBtn{
+    width: 40px;
+    line-height: 20px;
+    border: none;
+    background: #31b0d5;
+    color: #fff;
+    border-radius: 4px;
+}
+.closeBtn{
+    background: #fff;
+    color: #000;
+    border:1px solid #cccccc;
+    margin-right: 4px;
+}
