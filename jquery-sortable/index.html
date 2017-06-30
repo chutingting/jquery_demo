@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sortable jQuery</title>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/jquery-sortable.js"></script>
+<style>
+	body.dragging, body.dragging * {
+	  cursor: move !important;
+	}
+	.dragged {
+	  position: absolute;
+	  opacity: 0.5;
+	  z-index: 2000;
+	}
+	ol.example li.placeholder {
+	  position: relative;
+	  /** More li styles **/
+	}
+	ol.example li.placeholder:before {
+	  position: absolute;
+	  /** Define arrowhead **/
+	}
+</style>
+</head>
+
+<body>
+<h3>点击下方拖拽排序</h3>
+<ol class='example'>
+  <li>我原本是第一个</li>
+  <li>我原本是第二个</li>
+  <li>我原本是第三个</li>
+  <li>我原本是第四个</li>
+</ol>
+<script>
+	$(function  () {
+	  $("ol.example").sortable()
+	})
+</script>
+</body>
+</html>
