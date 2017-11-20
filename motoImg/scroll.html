@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <script type="text/javascript" src="http://m1.lefile.cn/gl/js/jquery-1.8.3.min.js"></script>
+    <script>
+    $(function(){
+      //内容高度
+        var content = $("#div2");
+      //框的高度
+      var box = $("#div1");
+      //自定义的滚动条
+      var scrollbar = $("#div3");
+      var scroll=function(content,box,scrollbar){
+        var bigHeight = content.height();
+        var smallHeight = box.height();
+        var rate = smallHeight/bigHeight;
+        var h = Math.floor(rate*smallHeight);
+        scrollbar.height(h);
+        var offset = box.offset()
+        var offsetT = offset.top+1;
+        scrollbar.mousedown(function(e){
+          var divOffsetT = scrollbar.offset().top;
+          var tempT = e.pageY-divOffsetT;
+          function move(e){
+            var newH = e.pageY-tempT-offsetT;
+            if(newH<0){
+              newH=0;
+            }else if(newH>(smallHeight-h)){
+              newH=smallHeight-h;
+            }
+            var rate2 = (newH+h)/smallHeight;
+            var contentH = Math.floor(bigHeight*rate2-smallHeight);
+            content.css("top",-contentH+"px");
+            scrollbar.css("top",newH+"px");
+          }
+          $("body").on("mousemove",move);
+
+          $("body").mouseup(function(){
+            $("body").off("mousemove",move);
+          });
+        });
+      }
+      scroll(content,box,scrollbar);
+    });
+    </script>
+    <style>
+      *{ margin:0; padding: 0;}
+      body{ font-size: 12px;}
+      #div1{ width: 200px; height: 300px; margin: 50px auto; position: relative; _overflow: hidden; border: 1px solid #000;}
+      #div2{ width: 180px; position: absolute; top: 0; left: 5px;}
+      #div3{ width: 10px; position: absolute; top: 0; right:5px; background: #000;}
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      <div id="div3"></div>
+      <div id="div2">
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+        1<br>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{margin:0 ;padding:0;}
+        .box{
+            /*width:100px;*/
+            display:-webkit-box;
+        }
+        p{
+            width:100px;
+            height:50px;
+            border:1px solid #ccc;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<!-- <div class="aa"></div> -->
+<div class="box">
+    <p>哈哈哈1</p >
+    <p>哈哈哈2</p >
+    <p>哈哈哈3</p >
+    <p>哈哈哈4</p >
+    <p>哈哈哈5</p >
+    <p>哈哈哈6</p >
+    <p>哈哈哈7</p >
+    <p>哈哈哈8</p >
+    <p>哈哈哈9</p >
+    <p>哈哈哈10</p >
+    <p>哈哈哈11</p >
+    <p>哈哈哈12</p >
+    <p>哈哈哈13</p >
+    <p>哈哈哈14</p >
+    <p>哈哈哈15</p >
+    <p>哈哈哈16</p >
+    <p>哈哈哈17</p >
+    <p>哈哈哈18</p >
+    <p>哈哈哈19</p >
+    <p>哈哈哈20</p >
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+
+    function drag(ops){
+        this.ops = ops;
+
+
+        this.init();
+
+
+    }
+    drag.prototype = {
+        init : function(){
+            this.wrap = document.createElement("div");
+            this.wrap.className = "wrap";
+
+            //判断是class还是ID
+            if(this.ops.ele.indexOf(".") > -1 ){
+                this.ops.ele = this.ops.ele.substring(1);
+                this.childEle = document.getElementsByClassName(this.ops.ele)[0];
+            }else{
+                this.ops.ele = this.ops.ele.substring(1);
+                this.childEle = document.getElementById(this.ops.ele);
+            }
+            this.wrap.appendChild(this.childEle.cloneNode(true));
+            this.childEleWidth = this.childEle.offsetWidth;
+
+            this.addWrap();
+            this.addDragBtn();
+            this.event();
+        },
+        initDom : function (){
+
+        },
+        addWrap : function(){
+            //给当前盒子添加一个父级元素
+            var prevEle = this.childEle.previousElementSibling;
+            console.log(prevEle);
+            if(prevEle == null){
+                document.body.insertBefore(this.wrap,this.childEle);
+                this.childEle.remove();
+                this.childEle = null;
+            }
+            this.setWrapStyle();
+        },
+        setWrapStyle : function(){
+            var wrapStyle = {
+                width : "300px",
+                height : "400px",
+                background : "#666",
+                position:"relative"
+            }
+            this.extend(wrapStyle,this.ops.wrapStyle);
+            console.log(wrapStyle);
+            for(var i in wrapStyle){
+                this.wrap.style[i] = wrapStyle[i];
+                // console.log(this.wrap.style.i);
+            }
+            this.wrapStyle = wrapStyle;
+
+            this.setChildPosition();
+
+
+        },
+        setChildPosition : function(){
+            this.wrap.children[0].style.position = "absolute";
+            this.wrap.children[0].style.left = 0;
+            this.wrap.children[0].style.top = 0;
+            this.wrap.children[0].style.width = this.childEleWidth + "px";
+        },
+        addDragBtn : function(){
+            this.dragBtn = document.createElement("div");
+            this.dragBtn.className = "dragBtn";
+            this.wrap.appendChild(this.dragBtn);
+            this.setDragBtnStyle();
+        },
+        setDragBtnStyle : function(){
+            var btnStyle = {
+                width : "100px",
+                height : "50px",
+                background : "#000",
+                position : "absolute",
+                left : 0,
+                bottom : 0
+            }
+            this.extend(btnStyle,this.ops.btnStyle);
+            for(var i in btnStyle){
+                this.dragBtn.style[i] = btnStyle[i];
+                // console.log(this.wrap.style.i);
+            }
+            this.btnStyle = btnStyle;
+        },
+        event : function(){
+            var _this = this;
+            var wrapStyleW = this.wrapStyle.width;
+            wrapStyleW = wrapStyleW.substring(0,wrapStyleW.indexOf("px"))*1;
+            var btnWidthW = this.btnStyle.width;
+            btnWidthW = btnWidthW.substring(0,btnWidthW.indexOf("px"))*1;
+            var ops = {
+                wrapWidth : wrapStyleW,
+                btnWidth : btnWidthW,
+                wrapChildWidth : this.wrap.children[0].offsetWidth,
+                btnSX : 0,
+                btnMX : 0,
+                maxLeft : this.wrap.offsetWidth - this.dragBtn.offsetWidth,
+                minLeft : 0,
+                wrapSetLeft : this.wrap.offsetLeft,
+                setBtnLeft : this.dragBtn.offsetLeft,
+                cha : 0,
+                over : 0
+            }
+            console.log("++++++");
+            console.log(ops);
+
+            var childEle = this.wrap.children[0];
+            var dragFun = {
+                start : function(e){
+                    document.body.addEventListener("mousemove"  ,dragFun.move);
+                    ops.btnSX = e.clientX;
+                    // ops.btnSetLeft = this.offsetLeft;
+                    ops.cha = e.clientX - (ops.setBtnLeft+ops.wrapSetLeft);
+
+                },
+                move : function(e){
+
+                    ops.btnMX = e.clientX;
+
+                    var scale = _this.childEleWidth / ops.wrapWidth;
+                    console.log();
+                    var left = e.clientX -  ops.wrapSetLeft - ops.cha ;
+                    if(left <= ops.minLeft){
+                        left = ops.minLeft;
+                    }
+
+                    if(left >= ops.maxLeft){
+                        left = ops.maxLeft;
+                    }
+                    console.log(left);
+                    _this.dragBtn.style.left = left  +"px";
+                    childEle.style.left = -left * scale + "px";
+                    ops.over = left ;
+                },
+                end : function(){
+                    console.log("end");
+                    ops.setBtnLeft = ops.over;
+                    document.body.removeEventListener("mousemove"  ,dragFun.move);
+                }
+            }
+            this.dragBtn.addEventListener("mousedown",dragFun.start);
+            document.body.addEventListener("mouseup"  ,dragFun.end);
+
+            // this.dragBtn.onmousedown = dragFun.start;
+            // this.dragBtn.onmouseup   = dragFun.end;
+
+        },
+        extend : (function () {
+            for(var p in {toString:null}){
+                //检查当前浏览器是否支持forin循环去遍历出一个不可枚举的属性，比如toString属性，如果不能遍历不可枚举的属性(IE浏览器缺陷)，那么forin循环不会进来
+                return function extend(o) {
+                    for(var i =1,len=arguments.length;i<len;i++){
+                        var source = arguments[i];
+                        for(prop in source){
+                            o[prop] = source[prop];
+                        }
+                    }
+
+                }
+            }
+            //这些属性需要特殊检查一下，因为有的IE浏览器不支持for in去遍历这些属性
+            var protoprops = ["toString","valueOf","constructor","hasOwnProperty","isPropertyOf","propertyIsEnumerable","toLocalString"];
+            return function patched_extend(o){
+                for(var i =1,len=arguments.length;i<len;i++){
+                    var source = arguments[i];
+                    for(prop in source){//先遍历常规的属性
+                        o[prop] = source[prop];
+                    }
+                    //检查是否有特殊属性，防止漏掉
+                    for(var j =0,len=protoprops.length;j<len;j++){
+                        prop = protoprops[j];
+                        if(source.hasOwnProperty(prop)){
+                            o[prop] = source[prop];
+                        }
+                    }
+                }
+                return o;
+            }
+        }())
+    }
+
+    new drag({
+        ele : ".box",
+        wrapStyle : { // 自定义wrap样式
+            background:"#ccc",
+            overflow : "hidden",
+            margin : "0 auto",
+            width : "800px"
+        },
+        btnStyle : {
+            background:"green",
+
+        }
+    });
+
+</script>
+</body>
+</html>

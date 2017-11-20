@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding: 0;}
+        .box{width:100%;height: 640px;margin: 0 auto;position: relative;overflow: hidden}
+        .box .bigImg{width: 100%;height: 640px;overflow: hidden;position: absolute;left: 0;top:0;}
+
+        .box .bigImg div{width: 100%;height: 640px;}
+        .box .bigImg div.img{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .box .menuBottomNav{
+            position: absolute;left:0;bottom: 0;
+            width: 100%;height: 60px;
+            background-color: rgba(0,0,0,0.8);
+        }
+        .menuBottomNav .menuShow{
+            margin-left: 130px;height: 60px;cursor:pointer;float: left;line-height: 60px;
+        }
+        .menuBottomNav .menuShow img{width: 24px;height:24px;}
+        .menuBottomNav .arrow{width: 72px;height: 60px;float: left;text-align: center;line-height: 60px;cursor:pointer;}
+        .menuBottomNav .arrow img{width:14px;height: 20px}
+        .menuBottomNav .arrow-left{margin-left: 40px;}
+        .menuBottomNav .arrow-right{}
+
+        .box .bottomImgNav{
+            height: 480px;width:100%; background-color: rgba(0,0,0,0.8);
+            position: absolute;left: 0;bottom: 0;
+        }
+        .box .bottomImgNav .arrow-down{margin:0 0 30px 132px;cursor: pointer;padding-top:24px;}
+        .box .bottomImgNav .arrow-down img{
+            width: 20px;height: 16px;
+        }
+        .box .bottomImgNav .text{color: #fff;font-size: 26px;width:200px;margin-left: 132px;font-weight: bold;}
+        .box .bottomImgNav .smallImg{white-space : nowrap;margin-top: 30px;padding-bottom: 25px;}
+        .box .bottomImgNav .smallImg div:first-child{margin-left:0;}
+        .box .bottomImgNav .smallImg div{
+            margin-left: 26px;display: inline-block;
+        }
+        .box .bottomImgNav .smallImg img{width:234px;height: 164px;}
+        .box .bottomImgNav .smallImg div span{
+            display: block;color: #fff;margin-top:24px;
+        }
+
+        .box .smallImg img{border:3px  transparent solid}
+        .box .smallImg .active{border:3px #fff solid}
+
+
+        #scrollbar2 {
+            margin-left: 130px;
+        }
+        #scrollbar2 .scrollbar {
+            clear: both;
+            height: 8px;
+            margin-left:0px;
+            position: relative;
+            background:#ccc;
+        }
+        #scrollbar2 .track {
+            background:#000;
+            height: 24px;
+            position: relative;
+            /*width: 100%;*/
+        }
+        #scrollbar2 .thumb {
+            background:#c6bfb9;
+            cursor: pointer;
+            height: 24px;
+            left: 0;
+            overflow: hidden;
+            position: absolute;
+        }
+        #scrollbar2 .viewport {
+            height: 306px;
+            position: relative;
+            /*width: 100%;*/
+        }
+        #scrollbar2 .overview {
+            left: 0;
+            list-style: none outside none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="bigImg">
+            <div class="img" style="background-image: url('./img/big.jpeg');"></div>
+            <div style="background: #da68ff"><img src="./img/big.jpeg" alt=""></div>
+            <div style="background: pink">3</div>
+            <div style="background: #90ff6b">4</div>
+            <div style="background: #3428ff">5</div>
+            <div style="background: #45ffce">6</div>
+        </div>
+        <div class="menuBottomNav">
+            <div class="menuShow"><img src="./img/all.png"></div>
+            <div class="arrow arrow-left"><img src="./img/arrow-left.png" ></div>
+            <div class="arrow arrow-right"><img src="./img/arrow-right.png" ></div>
+        </div>
+
+
+        <div class="bottomImgNav">
+            <div class="arrow-down"><img src="./img/arrow-down.png"></div>
+            <div class="text">captured by the moto x⁴</div>
+            <div id="scrollbar2">
+                <div class="viewport">
+                    <div class="overview">
+                        <div class="smallImg">
+                            <div>
+                                <img src="./img/img01.jpg">
+                                <span>Fast focusing in low light</span>
+                            </div>
+                            <div>
+                                <img src="./img/img01.jpg">
+                                <span>Fast focusing in low light</span>
+                            </div>
+                            <div>
+                                <img src="./img/img01.jpg">
+                                <span>Fast focusing in low light</span>
+                            </div>
+                            <div>
+                                <img src="./img/img01.jpg">
+                                <span>Fast focusing in low light</span>
+                            </div>
+                            <div>
+                                <img src="./img/img01.jpg">
+                                <span>Fast focusing in low light</span>
+                            </div>
+                            <div>
+                                <img src="./img/img01.jpg">
+                                <span>Fast focusing in low light</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scrollbar">
+                    <div class="track">
+                        <div class="thumb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<div style="height: 200px;background: red;"></div>
+</body>
+<script src="../jquery.min.js"></script>
+<script src="./tinyscrollbar.js"></script>
+<script>
+    $(function () {
+
+
+        $('.box .menuBottomNav').hide();
+        $(' .box .smallImg div:first-child img').addClass('active');
+
+
+        $('.arrow-down').on('click',function () {
+            $('.box .bottomImgNav').slideToggle(200);
+            $('.box .menuBottomNav').slideToggle(200);
+
+        });
+
+        //展示小图
+        $('.menuShow').on('click',function () {
+            $('.box .bottomImgNav').slideToggle(200);
+            $('.box .menuBottomNav').slideToggle(200);
+        });
+
+        function nextImg(index) {
+            //$(".bigImg div").fadeOut(10).eq(index).fadeIn(10);
+            $(".bigImg div").hide().eq(index).show();
+            $('.smallImg div img').eq(index).addClass('active').parent('div').siblings().find('img').removeClass('active');
+        }
+
+        var num = 0;
+        //点击小图
+        $('.smallImg').on('click','div',function () {
+            $('.box .bottomImgNav').slideToggle(200);
+            $('.box .menuBottomNav').slideToggle(200);
+           var _index = $(this).index();
+            num = _index;
+            nextImg(_index);
+        });
+        //点击箭头切换
+        $('.menuBottomNav').on('click','.arrow-left',function () {
+            num--;
+            if(num < 0) {
+                num = $(".bigImg div").length-1;
+            }
+            nextImg(num);
+         });
+
+        $('.menuBottomNav').on('click','.arrow-right',function () {
+            num++;
+            if(num >= $(".bigImg div").length){
+                num = 0;
+            }
+            nextImg(num);
+        });
+        // 滚动条
+        $('#scrollbar2').tinyscrollbar({ axis: 'x'});
+
+    })
+</script>
+</html>

@@ -1,0 +1,179 @@
+
+
+<div class="piece imgChutt20171115 btn_cntr_in_piece" datatype="2" sort="1"  mulityData="1" b_i="1920,1418,300">
+
+   <!--#set(String titleName ="captured by the moto x⁴")-->
+   <!--#set(Map rs = data("3","floorId=#",0))-->
+   <!--#if(rs.floor)-->
+   	<!--#set(Map floor = rs.floor)-->
+   	<!--#if(floor.configMap)-->
+   	    <!--#set(Map floorconfigMap = floor.configMap)-->
+   		<!--#if(floorconfigMap.titleName)-->
+   			<!--#set(String titleName =floorconfigMap.titleName)-->
+           <!--#end-->
+       <!--#end-->
+   <!--#end-->
+
+    <style>
+        *{margin:0;padding: 0;}
+        .imgChutt20171115 .box{width:100%;height: 640px;margin: 0 auto;position: relative;overflow: hidden}
+        .imgChutt20171115 .box .bigImg{width: 100%;height: 640px;overflow: hidden;}
+        .imgChutt20171115 .box .bigImg div{width: 100%;height: 640px;}
+        .imgChutt20171115 .box .bigImg div.img{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .imgChutt20171115 .box .menuBottomNav{
+            position: absolute;left:0;bottom: 0;
+            width: 100%;height: 60px;
+            background-color: rgba(0,0,0,0.75);
+        }
+        .imgChutt20171115 .menuBottomNav .menuShow{
+            margin-left: 130px;height: 60px;cursor:pointer;float: left;
+        }
+        .imgChutt20171115 .menuBottomNav .menuShow img{width: 24px;height:24px;margin-top:18px;}
+        .imgChutt20171115 .menuBottomNav .arrow{width: 72px;height: 60px;float: left;text-align: center;line-height: 60px;cursor:pointer;border-left: 1px solid #000;}
+        .imgChutt20171115 .menuBottomNav .arrow img{width:14px;height: 20px;margin-top:21px;}
+        .imgChutt20171115 .menuBottomNav .arrow-left{margin-left: 40px;}
+        .imgChutt20171115 .menuBottomNav .arrow-right{border-right: 1px solid #000;}
+
+        .imgChutt20171115 .box .bottomImgNav{
+            height: 480px;width:100%; background-color: rgba(0,0,0,0.75);
+            position: absolute;left: 0;bottom: 0;
+        }
+        .imgChutt20171115 .box .bottomImgNav .arrow-down{margin:0 0 30px 132px;cursor: pointer;padding-top:24px;}
+        .imgChutt20171115 .box .bottomImgNav .arrow-down img{width: 20px;height: 16px;}
+        .imgChutt20171115 .box .bottomImgNav .text{color: #fff;font-size: 26px;width:200px;margin-left: 132px;font-weight: bold;}
+        .imgChutt20171115 .box .bottomImgNav .smallImg{white-space : nowrap;margin-top: 30px;padding-bottom: 25px;}
+        .imgChutt20171115 .box .bottomImgNav .smallImg div:first-child{margin-left:0;}
+        .imgChutt20171115 .box .bottomImgNav .smallImg div{margin-left: 26px;display: inline-block;  }
+        .imgChutt20171115 .box .bottomImgNav .smallImg img{width:234px;height: 164px;}
+        .imgChutt20171115 .box .bottomImgNav .smallImg div span{  display: block;color: #fff;margin-top:24px;}
+
+        .imgChutt20171115 .box .smallImg img{border:3px  transparent solid}
+        .imgChutt20171115 .box .smallImg .active{border:3px #fff solid}
+
+
+        .imgChutt20171115 #scrollbar2 {margin-left: 130px;}
+        .imgChutt20171115 #scrollbar2 .scrollbar {  clear: both;height: 8px; margin-left:0px;  position: relative;  background:#ccc; }
+        .imgChutt20171115 #scrollbar2 .track {
+            background:#000;  height: 24px;  position: relative;
+        }
+        .imgChutt20171115 #scrollbar2 .thumb {
+            background:#c6bfb9;  cursor: pointer;  height: 24px;  left: 0;  overflow: hidden;  position: absolute;
+        }
+        .imgChutt20171115 #scrollbar2 .viewport {  height: 306px;  position: relative;
+        }
+        .imgChutt20171115 #scrollbar2 .overview {
+            left: 0;  list-style: none outside none;  margin: 0;  padding: 0;  position: absolute;  top: 0;
+        }
+
+    </style>
+    <div class="box">
+         <!--#set(Map rs = data("2","floorId=#",1))-->
+
+        <div class="bigImg">
+            <!--#for(Map ds : rs.datas)-->
+                <div <!--#if(0 == ds_index )--> class="nohid"<!--#end-->   class="img" style="background-image: url(${ds.image})" ></div>
+            <!--#end-->
+        </div>
+        <div class="menuBottomNav">
+            <div class="menuShow"><img src="//p2.lefile.cn/product/adminweb/2017/11/15/3e521a62-3b40-4fec-8611-37aba670c40b.png"></div>
+            <div class="arrow arrow-left"><img src="//p4.lefile.cn/product/adminweb/2017/11/15/a3c1900d-5f94-4297-9e1e-4a7df9405150.png" ></div>
+            <div class="arrow arrow-right"><img src="//p2.lefile.cn/product/adminweb/2017/11/15/22fab205-3edd-4239-8e77-c5249d26ae1e.png" ></div>
+        </div>
+        <div class="bottomImgNav">
+            <div class="arrow-down"><img src="//p1.lefile.cn/product/adminweb/2017/11/15/facef399-61f2-49af-8685-8cf795039434.png"></div>
+
+            <div class="text">${titleName}</div>
+
+            <div id="scrollbar2">
+                <div class="viewport">
+                    <div class="overview">
+                        <div class="smallImg">
+                         <!--#for(Map ds : rs.datas)-->
+                            <div>
+                                <!--#if(ds.sConfigMap)-->
+                                <!--#set(Map dsconfiges = ds.sConfigMap)-->
+                                <!--#if(dsconfiges.picUrl)-->
+                                   <img src="${dsconfiges.picUrl}"/>
+                                <!--#end-->
+                                <!--#end-->
+
+                                <!--#if(ds.sConfigMap)-->	                    <!--##小块自定义配置-->
+                                <!--#set(Map dsconfig = ds.sConfigMap)-->
+                                <!--#if(dsconfig.des)-->	              <!--##具体的key值-->
+                                <span>${dsconfig.des}</span>
+                                <!--#end-->
+                                <!--#end-->
+                            </div>
+                          <!--#end-->
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="scrollbar">
+                    <div class="track">
+                        <div class="thumb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<script src="//m1.lenovouat.com/lenovo_pc_platform/0.1.0/js/tinyscrollbar.js"></script>
+<script>
+    $(function () {
+
+        $('.imgChutt20171115 .box .menuBottomNav').hide();
+        $('.imgChutt20171115 .box .smallImg div:first-child img').addClass('active');
+
+
+        $('.imgChutt20171115 .arrow-down').on('click',function () {
+            $('.imgChutt20171115 .box .bottomImgNav').slideToggle(200);
+            $('.imgChutt20171115 .box .menuBottomNav').slideToggle(200);
+        });
+        //展示小图
+        $('.menuShow').on('click',function () {
+            $('.imgChutt20171115 .box .bottomImgNav').slideToggle(200);
+            $('.imgChutt20171115 .box .menuBottomNav').slideToggle(200);
+        });
+
+        function nextImg(index) {
+            $(".imgChutt20171115 .bigImg div").hide().eq(index).show();
+            $('.imgChutt20171115 .smallImg div img').eq(index).addClass('active').parent('div').siblings().find('img').removeClass('active');
+        }
+
+        var num = 0;
+        //点击小图
+        $('.imgChutt20171115 .smallImg').on('click','div',function () {
+            $('.box .bottomImgNav').slideToggle(200);
+            $('.box .menuBottomNav').slideToggle(200);
+           var _index = $(this).index();
+            num = _index;
+            nextImg(_index);
+        });
+
+        //点击箭头切换
+        $('.imgChutt20171115 .menuBottomNav').on('click','.arrow-left',function () {
+            num--;
+            if(num < 0) {
+                num = $(".bigImg div").length-1;
+            }
+            nextImg(num);
+         });
+
+        $('.imgChutt20171115 .menuBottomNav').on('click','.arrow-right',function () {
+            num++;
+            if(num >= $(".bigImg div").length){
+                num = 0;
+            }
+            nextImg(num);
+        });
+        //滚动条
+        $('.imgChutt20171115 #scrollbar2').tinyscrollbar({ axis: 'x'});
+
+    })
+</script>
+</div>
