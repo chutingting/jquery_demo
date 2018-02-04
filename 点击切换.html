@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击切换</title>
+	<script src="jquery.min.js"></script>
+	<script>
+		$(function(){
+			var i=0;
+			//点击右边箭头	
+			
+			$('#right').click(function(){
+				//$("#pic ul").css({marginLeft:-500})
+				
+				$("#pic ul").animate({marginLeft:-500},300,function(){
+					//把第一张图追加到ul中
+					$("#pic ul li").first().appendTo($("#pic ul"));
+					//让ul距离左边为0
+					$("#pic ul").css({marginLeft:0});
+				});
+			//定义一个变量，让对应的元素添加样式，兄弟删除样式
+			
+				i++;
+				if(i>=$("ol li").length)i=0;
+				$("ol li").removeClass("on");
+				$("ol li").eq(i).addClass("on");
+				j=i;
+			})
+			//点击左边箭头
+			var j=7;
+			$("#left").click(function(){
+				$("#pic ul").animate({marginLeft:-500},300,function(){
+					//把最后一张图前置到ul中
+					$("#pic ul li").last().prependTo($("#pic ul"));	
+					$("#pic ul").css({marginLeft:0})
+				});	 
+				j--;
+				if(j<0)j=6;
+				$("ol li").removeClass("on");
+				$("ol li").eq(j).addClass("on");
+				i=j;
+			})
+		})
+	</script>
+	<style>
+		*{margin:0;padding:0;}
+		#box{width:1000px;height:500px;border:1px solid blue;margin:0 auto;position: relative;}
+		#pic{width:500px;height:300px;overflow: hidden;border:1px solid #000;position:absolute; left:25%;top:10%;}
+		ul{height:300px;width:3500px;} 
+		#left{position: absolute;left:15%;top:30%;border:1px solid #ccc;cursor: pointer;}
+		#right{position: absolute;right:15%;top:30%;border:1px solid #ccc;cursor: pointer;}
+		ul li{list-style: none;float: left;}
+		ul li img{width:500px;height:300px;}
+		ol{position: absolute;left:20%;bottom:10%;}
+		ol li{float: left;list-style: none;margin-right:10px;border:1px solid transparent;padding:3px;}
+		ol li img{width:80px;height:60px;}
+		ol li.on{border:1px solid red;}
+
+	</style>
+</head>
+<body>
+	<div id="box">
+		<img src="img/l.png" id="left">
+		<img src="img/r.png" id="right">
+		<div id="pic">
+			<ul>
+				<li><img src="img/1.jpg"></li>
+				<li><img src="img/2.jpg"></li>
+				<li><img src="img/3.jpg"></li>
+				<li><img src="img/4.jpg"></li>
+				<li><img src="img/5.jpg"></li>
+				<li><img src="img/6.jpg"></li>
+				<li><img src="img/7.jpg"></li>
+			</ul>
+		</div>
+		<ol>
+				<li class="on"><img src="img/1.jpg"></li>
+				<li><img src="img/2.jpg"></li>
+				<li><img src="img/3.jpg"></li>
+				<li><img src="img/4.jpg"></li>
+				<li><img src="img/5.jpg"></li>
+				<li><img src="img/6.jpg"></li>
+				<li><img src="img/7.jpg"></li>
+		</ol>
+	</div>
+</body>
+</html>

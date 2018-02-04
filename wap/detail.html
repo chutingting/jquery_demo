@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        .raiseorder_detail{font-size: 12px;background: #f6f6f6;width: 100%;position: absolute;top:0;bottom:0;}
+        .raiseorder_detail .order_detail{line-height: 20px;padding:10px;background: #fff;border-bottom: 1px solid #cecece;border-top: 1px solid #cecece;}
+        .raiseorder_detail .order_detail p{display: flex;}
+        .raiseorder_detail .order_detail p span{flex: 1;}
+        .raiseorder_detail .order_address{background: #fff;height:36px;margin-top:10px;padding:10px;border-bottom: 1px solid #cecece;border-top: 1px solid #cecece;}
+        .raiseorder_detail .order_address h5{float: left;}
+        .raiseorder_detail .order_address div{float: left;color: #868282;}
+        .raiseorder_detail .order_info{margin-top:10px;}
+        .raiseorder_detail .order_info h5,.raiseorder_detail .lenovo{line-height: 36px;background: #fff;border-top: 1px solid #cecece;padding:0 10px;}
+        .raiseorder_detail .lenovo {margin-top:10px;border-bottom: 1px solid #cecece;}
+
+
+        .raiseorder_detail .order_goods .order{height: 70px;padding: 10px 0; overflow: hidden;margin:0 10px;}
+        .raiseorder_detail .order_goods .order img{width: 60px;  height: 60px;float: left;margin-right: 10px;  border: 1px solid #cecece;}
+        .raiseorder_detail .order_goods .order .order_text{width: 290px;display: inline-block;}
+        .raiseorder_detail .order_goods .order .order_text p:nth-of-type(2){margin-top:4px;color: #8e8e8e  }
+        .raiseorder_detail .order_goods .order_bottom{margin:0 10px;border-top: 1px dashed #cecece;border-bottom: 1px dashed #cecece;padding:10px 0;    text-align: right;  line-height: 20px;}
+        .raiseorder_detail .order_goods .order_bottom span b{color: #e2231a;font-weight: normal;}
+
+    </style>
+</head>
+<body>
+    <div class="raiseorder_detail">
+        <div class="order_detail">
+            <p>
+                <span>订单编号：99999</span>
+                <span>支付状态：未支付</span>
+            </p>
+            <p>
+                <span>项目状态：众筹中</span>
+                <span>订单备注：</span>
+            </p>
+            <p>
+                <span>联 系 人：XX</span>
+                <span>联系方式：1232232332</span>
+            </p>
+        </div>
+
+        <div class="order_address">
+            <h5>收货信息：</h5>
+            <div>
+                <p>名字 123444432 </p>
+                <p>北京市 海淀区 xxxxx</p>
+            </div>
+        </div>
+
+        <div class="lenovo">
+            <h5>发起人：联想</h5>
+        </div>
+
+        <div class="order_info">
+            <h5>项目商品：</h5>
+            <div class="order_goods">
+                <div class="order">
+                    <img src="//p4.lefile.cn/product/adminweb/2016/08/09/Hc2dOY91ESkbcUjEq7tSBYgPT-8869.jpg" alt="">
+                    <div class="order_text">
+                        <p>北京移动手机话费充值10元</p>
+                        <p>2月5日最后一天，众筹500个即算成功，数量有限，手慢无！您将以众筹特惠价199元的价格获得超薄纳米暖宫腰带（黑色）。</p>
+                    </div>
+                </div>
+                <div class="order_bottom">
+
+                    <p>
+                        <span>支付金额 ：<b>¥1222</b></span>
+
+                        <span>配送费用 ：2999</span>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

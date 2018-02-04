@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .bg{
+            width: 120px;
+            height:54px;
+            float: left;margin-right: 10px;
+            position: relative;
+           /* display: table;*/
+        }
+        .bgImg{
+            background-image: url("01.png");
+        }
+        .bgNum{
+            background-image: url("02.png");
+        }
+        .bgNum i{
+            font-style: normal;color: #576e7c;padding-left: 12px;
+            position: absolute;top:17px;font-size: 13px;
+        }
+        .text{display: table;height: 54px;}
+        .text span{
+            color: #fff;font-size: 12px;padding-left:43px; width: 52px;
+            display: table-cell;vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="tagBg">
+        <div class="bg bgImg">
+            <div class="text">
+                <span>租户关联</span>
+            </div>
+        </div>
+
+        <div class="bg bgNum">
+            <i>02</i>
+            <div class="text">
+                <span>租户租户关联</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
