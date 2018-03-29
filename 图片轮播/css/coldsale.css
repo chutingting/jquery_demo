@@ -1,0 +1,158 @@
+body{padding-top:0;background-color: transparent!important;}
+section{width:100%;height:23.14rem;padding-top:0.24rem;background: url('../icons/white_bg.png') no-repeat center;background-size: contain;}
+/*头部*/
+.lxNotice{padding:0 0.16rem 0 0.48rem;}
+.lxNotice .idea_computer{display: block;width:2.8rem;height:1.98rem;}
+.lxNotice .computer_intro{margin-top:-0.12rem;}
+.lxNotice .computer_intro .computer_info{line-height: 0.36rem;text-align:right;font-size: 0.24rem;color: #000000;float: right;margin-right:0.16rem;}
+.lxNotice .computer_intro .intle_logo{float: right;width:1.16rem;height:1.38rem;margin-top:-0.16rem;}
+/*会员卡*/
+.userInfo{width:6.66rem;height:3.68rem;margin:0.16rem;background: url('../icons/red_card_bg.png') no-repeat center;background-size: contain;padding:0.32rem 0.16rem 0 0.36rem;}
+/*未激活状态*/
+.getCard{display: block;}
+.getCard .getCard_title{margin-top:0.52rem;font-size: 0.48rem;font-family: 'PingFangSC-Semibold', 'Arial';color:#ffffff;line-height: 0.56rem;text-align: center;    }
+.getCard .getCard_condition{margin-top:0.28rem;margin-bottom:0.94rem;font-size: 0.28rem;line-height:0.28rem;color:#ffffff;text-align: center;}
+.getCard .getCard_btn{border:1px solid #E6DBC0;border-radius: 4px;margin:0 auto;width:4.52rem;height:0.8rem;line-height: 0.8rem;text-align: center;color: #E6DBC0;font-size:0.32rem;}
+/*激活状态*/
+.ownCard{display: none;}
+.ownCard .userInfo_identity{height: auto;}
+.ownCard .userInfo_left{width:3.4rem;height:1.4rem;float: left;}
+.ownCard .userInfo_left .userName{color: #FFFFFF;letter-spacing: 0.19px;height:0.32rem;line-height: 0.4rem;margin-bottom: 0.24rem;}
+.ownCard .userInfo_left .userName a{color:white!important;}
+.ownCard .userInfo_left .userName span{font-size: 0.32rem;font-family: 'PingFangSC-Semibold','Arial';float:left;letter-spacing: 0.19px;}
+.ownCard .userInfo_left .userName .userSign_default{background: url('../icons/userSign_default.png') no-repeat center;width:0.48rem;height:0.48rem;background-size: contain;margin-top: -0.08rem;margin-left: 0.18rem;}
+.ownCard .userInfo_left .userName .userSign_high{background: url('../icons/userSign_high.png') no-repeat center;background-size: contain;}
+.ownCard .userInfo_left .userName .userSign_high{background: url('../icons/userSign_high.png') no-repeat center;background-size: contain;}
+.ownCard .userInfo_left .userIdentity{font-size: 0.28rem;color: #E6DBC0;letter-spacing: -0.09px;line-height: 0.44rem;height:0.44rem;width:1.6rem;text-align: center;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-ms-box-sizing: border-box;-o-box-sizing: border-box;}
+.ownCard .userInfo_left .userName #userName{width:2.68rem;}
+.ownCard .userInfo_right{float: right;}
+.ownCard .userInfo_right .icon-goUCenter{float: right;background: url('../icons/white_next.png') no-repeat center;background-size: contain;width:0.48rem;height:0.48rem;}
+.ownCard .userInfo_right span{float: right;line-height: 0.48rem;color: #ffffff;font-size: 0.28rem;}
+.ownCard .userId {width: 100%;height: 0.32rem;line-height: 0.32rem;font-size: 0.32rem;color: #FFFFFF;letter-spacing: 0.19px;margin-top: 0.12rem;}
+.ownCard .userId a{color:white!important;}
+.ownCard .userAsset {overflow: hidden;margin-top:0.64rem;}
+.ownCard .userAsset a{width:50%;float: left;text-align: center;}
+.ownCard .userAsset p{color: #FFFFFF;letter-spacing: 0.17px;font-size: 0.28rem;}
+.ownCard .userAsset .white{color: #ffffff;font-size: 0.32rem;letter-spacing: 0.19px;font-family: 'PingFangSC-Semibold','Arial';}
+/*专区查询*/
+.zqSearch{margin:0 0.64rem -0.16rem;}
+.zqSearch a{float: left;font-size: 0.32rem;line-height: 0.32rem;font-family: 'PingFangSC-Semibold', 'Arial';color:#ffffff;}
+.zqSearch .jsq{padding:0.4rem 0.52rem 0.56rem 0.66rem;margin-right:0.48rem;background: url('../icons/jsq.png') no-repeat center;background-size: contain;}
+.zqSearch .dmcx{padding:0.38rem 0.34rem 0.58rem 0.52rem;background: url('../icons/dmcx.png') no-repeat center;background-size: contain;}
+/*学生认证*/
+.student_identify{width:6.84rem;height:5.22rem;padding-top:0.52rem;margin:0 auto;background: url('../icons/identify.png') no-repeat center;background-size: contain;position: relative;}
+.student_identify .identify_title{width:3.98rem;height:0.7rem;line-height:0.7rem;margin-left:1.47rem;text-align: center;font-size: 0.32rem;font-family: 'PingFangSC-Semibold', 'Arial';color: #ffffff;}
+.student_identify .identify_info{margin:0.78rem auto 0;overflow-y:auto;width:4.46rem;height:2rem;line-height: 0.4rem;font-size: 0.28rem;color: #ffffff;}
+/*滚动条样式*/
+.student_identify .identify_info::-webkit-scrollbar {width:0.05rem;}
+.student_identify .identify_info::-webkit-scrollbar-track {display: none;} /* 滚动条的滑轨背景颜色 */
+.student_identify .identify_info::-webkit-scrollbar-thumb {background-color: #CEA352;border-radius: 15px;} /* 滑块颜色 */
+.student_identify .identify_info::-webkit-scrollbar-button {display: none;} /* 滑轨两头的监听按钮颜色 */
+.student_identify .identify_info::-webkit-scrollbar-corner {background-color: black;} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+/*end*/
+.student_identify .identify_btn{display:block;margin-top:0.64rem;margin-left:2.6rem;width:1.82rem;height:0.52rem;line-height: 0.52rem;text-align:center;font-family: 'PingFangSC-Semibold', 'Arial';font-size: 0.28rem;color: #F4364C;text-shadow: 0 1px 0 #66000C; }
+.student_identify .qb{position: absolute;right:-0.3rem;top:0.08rem;width:1.48rem;height:1.66rem;background: url('../icons/qb.png') no-repeat center;background-size: contain;animation:shake 3s;-moz-animation: shake 3s;	/* Firefox */  -webkit-animation: shake 3s;	/* Safari 和 Chrome */-o-animation: shake 3s;	/* Opera */}
+@-webkit-keyframes shake{
+    0%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+@keyframes shake {
+    0%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+/*商品*/
+.goodsTopic .goodsTopic_title{width:3.86rem;height:0.72rem;line-height:0.72rem;margin:0 auto 0.16rem;background: url('../icons/cptj.png') no-repeat center;background-size: contain;font-size: 0.32rem;color: #ffffff;text-align: center;}
+.goodsTopic .swiper-container{position: relative;overflow: hidden;  }
+/*.swiper-wrapper{padding:0 0.5rem;position: relative;}*/
+.swiper-wrapper{position: relative;}
+/*.swiper-slide{position: absolute;left: 0;right:0;margin:0 auto;}*/
+/*.goodsModule{margin-left:0.08rem;margin-right: 0.08rem;}*/
+.goodsItem{width:2.96rem;height:4.16rem;padding:1.12rem 0.32rem 0;background: url('../icons/goodsBg.png') no-repeat center;background-size: contain;margin:0 auto;}
+.goodsItem dt {margin-bottom: 0.16rem;width:2.96rem;height:2.4rem;}
+.goodsItem dt img{width:100%;height:100%;}
+.goodsItem .goodsItem_intro{font-size: 0.28rem;line-height: 0.36rem;color: #000000;}
+.goodsItem .goodsItem_price{margin-top:0.24rem;font-size: 0.32rem;color:#FF8200;line-height: 0.32rem;font-family: 'PingFangSC-Semibold', 'Arial';}
+/*红包*/
+.toMall{background: url('../icons/toMall.png') no-repeat center;background-size: contain;width:4.32rem;height:0.72rem;margin:0 auto;padding:1.21rem 0.42rem 0.4rem 0.52rem;}
+.toMall a{width:100%;height:100%;display: block;}
+/*footer*/
+footer{padding:0.48rem;background: #238AD6;font-size: 0.24rem;line-height: 0.36rem;color: #ffffff;}
+/*提示弹框*/
+.showMsg{width:4.22rem;height:auto;font-size:0.28rem;position: fixed;left:50%;top:50%;z-index:100000;transform: translate( -50%, -50%);background: rgba(0,0,0,0.6);border-radius: 2px;color: #ffffff;letter-spacing: 0.19px;text-align: center;padding: 0.32rem;display: none;}
+/*遮罩*/
+.mask{width:100%;height:100%;position: fixed;z-index: 102;top: 0;left: 0;background-color: rgba(0,0,0,.5);display: none;}
+/*激活弹框*/
+.activateDialog{width:5.26rem;height:5.08rem;padding:0.64rem 0.32rem 0;position: fixed;left:50%;top:50%;z-index:999;transform: translateX(-50%) translateY(-50%);background: #FFFFFF;border-radius: 16px;display: none;}
+.activateDialog .icon_close{position: absolute;top:-0.88rem;right:0;z-index:999;width:0.64rem;height:0.64rem;display: block;border-radius: 50%;background:#ffffff url('../icons/icon_close.png') no-repeat center;background-size: contain;}
+.activateDialog .activate_title{font-size: 0.36rem;color: #000000;line-height: 0.36rem;font-family: 'PingFangSC-Semibold', 'Arial';text-align: center;}
+.activateDialog .activate_form{margin-top:0.64rem;}
+.activateDialog .activate_input{margin-bottom: 0.16rem;}
+.activateDialog .activate_last{margin-bottom: 0;}
+.activateDialog .activate_input input{height:0.32rem;line-height: 0.32rem;font-size: 0.32rem;border:none;outline: none;padding: 0.28rem 0 0.28rem 0.32rem;}
+.activateDialog .activate_input #captcha{width:2.68rem;float: left;}
+.activateDialog .input_btn{float: left;width:2.24rem;height:0.32rem;margin: 0.28rem 0;}
+.activateDialog .input_btn a{display: block;width:100%;height:0.88rem;line-height: 0.88rem;text-align: center;color: #000000;margin-top: -0.28rem;}
+.activateDialog .activate_btn{width:3.98rem;height:0.88rem;line-height: 0.88rem;text-align: center;background-color: #F4364C;border-radius: 2px;color: #ffffff;margin:0.64rem auto 0;}
+/*礼包弹框*/
+.giftsDialog{width:5.9rem;height:6.32rem;padding-top:2rem;position: fixed;left:50%;top:50%;z-index:999;transform: translateX(-50%) translateY(-50%);background: url('../icons/gifts_bg.png') no-repeat center;background-size: contain;display: none;}
+.giftsDialog .giftsTitle{font-size: 0.48rem;color:#F4364C;line-height: 0.48rem;text-align: center;margin-bottom:0.64rem;text-shadow: 0 1px 1px ;}
+.giftsDialog .giftsList{height:3.36rem;overflow-y: auto;margin-left: 0.32rem;margin-right:0.08rem;}
+/*滚动条样式*/
+.giftsDialog .giftsList::-webkit-scrollbar {width:0.05rem;}
+.giftsDialog .giftsList::-webkit-scrollbar-track {background-color:#F8E1BB;border-radius: 8px;} /* 滚动条的滑轨背景颜色 */
+.giftsDialog .giftsList::-webkit-scrollbar-thumb {background-color: #FF8200;border-radius: 8px;} /* 滑块颜色 */
+.giftsDialog .giftsList::-webkit-scrollbar-button {display: none;} /* 滑轨两头的监听按钮颜色 */
+.giftsDialog .giftsList::-webkit-scrollbar-corner {background-color: black;} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+/*end*/
+.giftsDialog .giftsList li{float: left;width:2.38rem;height:1.44rem;margin-bottom:0.16rem;}
+.giftsDialog .giftsList .li-odd{background: url('../icons/gifts-odd.png') no-repeat center;background-size: contain;padding-left:0.14rem ;padding-right:0.1rem;}
+.giftsDialog .giftsList .li-even{background: url('../icons/gifts-even.png') no-repeat center;background-size: contain;padding-left: 0.14rem;padding-right:0.1rem;}
+.giftsDialog .giftsList li p{color:#ffffff;text-align: center;}
+.giftsDialog .giftsList li .rights-num{font-size: 0.4rem;font-family: 'PingFangSC-Semibold', 'Arial';line-height: 0.4rem;margin-top:0.32rem;margin-bottom:0.16rem;}
+.giftsDialog .giftsList li .rights-type{font-size: 0.24rem;line-height: 0.28rem;}
+.gifts_close{margin:0.32rem auto 0;border:1px solid #F4364C;border-radius: 2px;width:3.98rem;height:0.88rem;line-height: 0.88rem;text-align: center;font-size: 0.32rem;color: #F4364C;}
+/*二维码弹框*/
+.qrcodeDialog{width:3.5rem;height:5.12rem;padding:0.48rem 0.88rem 0.8rem;position: fixed;left:50%;top:50%;z-index:999;transform: translateX(-50%) translateY(-50%);background: #FFFFFF;border-radius: 8px;display: none;}
+.qrcodeDialog .icon_close{position: absolute;top:-0.88rem;right:0;z-index:999;width:0.64rem;height:0.64rem;display: block;border-radius: 50%;background:#ffffff url('../icons/icon_close.png') no-repeat center;background-size: contain;}
+.qrcodeDialog .qrcode_img{width:3.5rem;height:3.48rem;display: block;margin:0 auto;}
+.qrcode_intro{margin-top:0.32rem;text-align: center;font-size: 0.28rem;}
+.qrcode_title{color: #000000;line-height: 0.28rem;}
+.qrcode_info{margin-top:0.24rem;color:#808080;line-height: 0.4rem;}
+/*loading*/
+.loading{width:100%;height:100%;position: fixed;z-index: 102000;top: 0; right: 0;bottom: 0;left: 0;background:rgba(0,0,0,.5);display: none;}
+.loading img{display: block;position: absolute;left:50%;top:50%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);width:15%;height:auto;}
+
+
+
+
+
+
+
+
+
+
+
